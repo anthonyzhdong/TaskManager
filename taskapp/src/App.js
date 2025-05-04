@@ -3,7 +3,9 @@ import {Routes, Route} from 'react-router-dom'
 import HomePage from './components/home/Home';
 import './App.css';
 import Header from './components/Header';
+import PageNotFound from './components/PageNotFound';
 import AboutPage from './components/about/About';
+import TaskPage from './components/tasks/TaskPage';
 
 function App() {
   return (
@@ -12,10 +14,10 @@ function App() {
         <Header/>
         <Routes>
           <Route path = "/" element= {<HomePage/>} />
+          <Route path = "/taskpage" element = {<TaskPage />}/>
+          <Route path = "/about" element = {<AboutPage/>}/>
+          <Route path = "*" element = {<PageNotFound/>} />
         </Routes>
-        <a>
-          hi
-        </a>
       </header>
     </div>
   );
