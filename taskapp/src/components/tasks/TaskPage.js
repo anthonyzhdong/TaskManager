@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from "react-redux";
+import * as taskActions from "../../redux/actions/taskActions";
+import PropTypes from 'prop-types';
 
 class TaskPage extends React.Component{
 
@@ -16,7 +19,8 @@ class TaskPage extends React.Component{
     }
     handleSubmit = (event) => {
         event.preventDefault();
-        alert(this.state.task.title);
+        this.props.dispatch(taskActions.createTask(this.state.task));
+        //alert(this.state.task.title);
     }
 
      render(){
@@ -30,8 +34,19 @@ class TaskPage extends React.Component{
 
         );
      }
+}
 
+tasksPage.PropTypes = {
+    dispatch: PropTypes.func.isRequired
+};
 
+function mapStateToProps(state, ownProps){
+
+    return {
+        courses: state.tasks
+    }
 
 }
-export default TaskPage;
+
+
+export default connect(mapStateToProps, mapDispatchToProps) (TaskPage);
