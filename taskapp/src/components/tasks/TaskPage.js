@@ -30,23 +30,32 @@ class TaskPage extends React.Component{
                 <h3>Add Task</h3>
                 <input type = "text" onChange={this.handleChange} value = {this.state.task.title} />
                 <input type = "submit" value = "Save"/>
+                { this.props.tasks.map(task => (
+                    <div key = {task.title}>{ task.title } </div>
+                ))} 
             </form>
+
+         
 
         );
      }
 }
 
-tasksPage.PropTypes = {
+
+
+TaskPage.PropTypes = {
+    
+    tasks: PropTypes.array.isRequired,
     dispatch: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state, ownProps){
 
     return {
-        courses: state.tasks
+        tasks: state.tasks
     }
 
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps) (TaskPage);
+export default connect(mapStateToProps) (TaskPage);
