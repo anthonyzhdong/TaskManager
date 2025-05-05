@@ -1,11 +1,16 @@
 // empty array as that'll store an array of tasks
+
+import * as types from "../actions/actionTypes";
 export default function taskReducer(state = [], action){
     switch(action.type){
         // looking for a specific action
-        case "CREATE_TASK":
+        case types.CREATE_TASK:
             //debugger;
             // returning new state with new action
             return [...state, {...action.task }];
+
+        case types.LOAD_TASKS_SUCCESS:
+            return action.tasks;
         default:
             return state;
 
