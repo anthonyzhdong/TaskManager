@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import * as taskActions from "../../redux/actions/taskActions";
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 class TaskPage extends React.Component{
 
@@ -12,11 +12,14 @@ class TaskPage extends React.Component{
     };
 
     
-
+    // updates the input field 
     handleChange = (event) =>{
         const task = {...this.state.task, title: event.target.value};
         this.setState({task});
     }
+
+    //dispatch the createTask with the new local state
+    // task reducer receives the action, creates a new state with the task details, store updates its state, component rerenders the new task
     handleSubmit = (event) => {
         event.preventDefault();
         //debugger;
@@ -44,10 +47,10 @@ class TaskPage extends React.Component{
 
 
 
-TaskPage.PropTypes = {
+TaskPage.propTypes = {
     
-    tasks: PropTypes.array.isRequired,
-    dispatch: PropTypes.func.isRequired
+    tasks: propTypes.array.isRequired,
+    dispatch: propTypes.func.isRequired
 };
 
 function mapStateToProps(state, ownProps){
