@@ -19,6 +19,7 @@ class TaskPage extends React.Component{
     }
     handleSubmit = (event) => {
         event.preventDefault();
+        //debugger;
         this.props.dispatch(taskActions.createTask(this.state.task));
         //alert(this.state.task.title);
     }
@@ -50,7 +51,7 @@ TaskPage.PropTypes = {
 };
 
 function mapStateToProps(state, ownProps){
-
+    //debugger;
     return {
         tasks: state.tasks
     }

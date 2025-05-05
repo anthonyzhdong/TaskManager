@@ -3,6 +3,7 @@ export default function taskReducer(state = [], action){
     switch(action.type){
         // looking for a specific action
         case "CREATE_TASK":
+            //debugger;
             // returning new state with new action
             return [...state, {...action.task }];
         default:
