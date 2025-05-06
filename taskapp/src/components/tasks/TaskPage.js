@@ -8,15 +8,22 @@ import TaskList from './TaskList';
 
 class TaskPage extends React.Component{
 
+    
 
     componentDidMount(){
-        this.props.actions.loadTasks().catch(error=>{
-            alert("Loading tasks failed"+error);
-        });
 
-        this.props.actions.loadAuthors().catch(error=>{
-            alert("Loading authors failed"+error);
-        });
+        const { tasks, authors, actions } = this.props;
+        // so it only loads once
+        if(tasks.length === 0){
+            actions.loadTasks().catch(error=>{
+                alert("Loading tasks failed"+error);
+            });
+        }
+        if(authors.length === 0){
+            actions.loadAuthors().catch(error=>{
+                alert("Loading authors failed"+error);
+            });
+        }   
     }
     
 
@@ -39,7 +46,8 @@ class TaskPage extends React.Component{
 TaskPage.propTypes = {
     actions: propTypes.object.isRequired,
     tasks: propTypes.array.isRequired,
-    dispatch: propTypes.func.isRequired
+    dispatch: propTypes.func.isRequired,
+    authors: propTypes.array.isRequired
 };
 
 function mapStateToProps(state, ownProps){
