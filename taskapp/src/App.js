@@ -5,7 +5,7 @@ import './App.css';
 import Header from './components/Header';
 import PageNotFound from './components/PageNotFound';
 import AboutPage from './components/about/About';
-import TaskPage from './components/tasks/TaskPage';
+import TaskPage from './components/tasks/TaskPage.jsx';
 
 function App() {
   return (
