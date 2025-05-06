@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from "react-redux";
 import * as taskActions from "../../redux/actions/taskActions";
+import * as authorActions from "../../redux/actions/authorActions";
 import propTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
+import TaskList from './TaskList';
 
 class TaskPage extends React.Component{
 
@@ -11,6 +13,10 @@ class TaskPage extends React.Component{
         this.props.actions.loadTasks().catch(error=>{
             alert("Loading tasks failed"+error);
         });
+
+        this.props.actions.loadAuthors().catch(error=>{
+            alert("Loading authors failed"+error);
+        });
     }
     
 
@@ -18,9 +24,10 @@ class TaskPage extends React.Component{
         return (
             <>
                 <h1> Courses </h1>
-                { this.props.tasks.map(task => (
+                <TaskList tasks = {this.props.tasks}/>
+                {/* { this.props.tasks.map(task => (
                     <div key = {task.title}>{ task.title } </div>
-                ))} 
+                ))}  */}
     	    </>
         
         );
@@ -30,7 +37,7 @@ class TaskPage extends React.Component{
 
 
 TaskPage.propTypes = {
-    
+    actions: propTypes.object.isRequired,
     tasks: propTypes.array.isRequired,
     dispatch: propTypes.func.isRequired
 };
@@ -38,14 +45,24 @@ TaskPage.propTypes = {
 function mapStateToProps(state, ownProps){
     //debugger;
     return {
-        tasks: state.tasks
-    }
+        // if we have no author data then return empty array
+        tasks: state.authors.length === 0 ? [] : state.tasks.map(task =>{
+            return{
+            ...task,
+            authorName: state.authors.find(a => a.id === task.authorId).name
+            };
+        }),
+        authors: state.authors
+    };
 
 }
 
 function mapDispatchToProps(dispatch){
     return {
-        actions: bindActionCreators(taskActions, dispatch)
+        actions: {
+            loadTasks: bindActionCreators(taskActions.loadTasks, dispatch),
+            loadAuthors: bindActionCreators(authorActions.loadAuthors, dispatch)
+        }
     };
 }
 
