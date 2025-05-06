@@ -1,7 +1,8 @@
 // empty array as that'll store an array of tasks
+import initialState from "./initialState";
 
 import * as types from "../actions/actionTypes";
-export default function taskReducer(state = [], action){
+export default function taskReducer(state = initialState.tasks, action){
     switch(action.type){
         // looking for a specific action
         case types.CREATE_TASK:
