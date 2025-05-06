@@ -6,6 +6,7 @@ import Header from './components/Header';
 import PageNotFound from './components/PageNotFound';
 import AboutPage from './components/about/About';
 import TaskPage from './components/tasks/TaskPage.jsx';
+import ManageTaskPage from './components/tasks/ManageTaskPage.js';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path = "/" element= {<HomePage/>} />
           <Route path = "/taskpage" element = {<TaskPage />}/>
           <Route path = "/about" element = {<AboutPage/>}/>
+          <Route path = "/manage" element = {<ManageTaskPage/>}/>
           <Route path = "*" element = {<PageNotFound/>} />
         </Routes>
       </header>
