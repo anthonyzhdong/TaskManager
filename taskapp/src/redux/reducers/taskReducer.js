@@ -5,11 +5,12 @@ import * as types from "../actions/actionTypes";
 export default function taskReducer(state = initialState.tasks, action){
     switch(action.type){
         // looking for a specific action
-        case types.CREATE_TASK:
+        case types.CREATE_TASKS_SUCCESS:
             //debugger;
             // returning new state with new action
             return [...state, {...action.task }];
-
+        case types.UPDATE_TASKS_SUCCESS:
+            return state.map(task => task.id === action.task.id ? action.task : task);
         case types.LOAD_TASKS_SUCCESS:
             return action.tasks;
         default:

@@ -41,11 +41,17 @@ export default function ManageTaskPage() {
         }));
     }
 
+    function handleSave(event){
+        event.preventDefault();
+        dispatch(saveTask(task));
+    
+    }
+
     return (<TaskForm
         authors={authors}
         task={task}
         onChange={handleChange}
-        onSave={() => { }}
+        onSave={handleSave}
     />
     );
 }
