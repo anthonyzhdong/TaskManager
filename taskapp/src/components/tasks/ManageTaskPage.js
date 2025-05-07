@@ -11,6 +11,7 @@ export default function ManageTaskPage() {
     const authors = useSelector(state => state.authors);
     const tasks = useSelector(state => state.tasks);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [task, setTask] = useState(newTask);
     const { slug } = useParams();
 
@@ -43,7 +44,9 @@ export default function ManageTaskPage() {
 
     function handleSave(event){
         event.preventDefault();
-        dispatch(saveTask(task));
+        dispatch(saveTask(task)).then(()=>{
+            navigate("/tasks");
+        });
     
     }
 
