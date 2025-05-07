@@ -1,12 +1,12 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom'
-import HomePage from './components/home/Home';
+import HomePage from './components/home/Home.jsx';
 import './App.css';
 import Header from './components/Header';
 import PageNotFound from './components/PageNotFound';
-import AboutPage from './components/about/About';
+import AboutPage from './components/about/About.jsx';
 import TaskPage from './components/tasks/TaskPage.jsx';
-import ManageTaskPage from './components/tasks/ManageTaskPage.js';
+import ManageTaskPage from './components/tasks/ManageTaskPage.jsx';
 
 function App() {
   return (

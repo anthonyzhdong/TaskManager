@@ -4,7 +4,7 @@ import * as taskActions from "../../redux/actions/taskActions";
 import * as authorActions from "../../redux/actions/authorActions";
 import propTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
-import TaskList from './TaskList';
+import TaskList from './TaskList.jsx';
 import { Navigate } from "react-router-dom";
 
 class TaskPage extends React.Component{
