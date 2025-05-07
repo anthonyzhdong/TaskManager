@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import TextInput from "../common/TextInput";
-import SelectInput from "../common/SelectInput";
+import TextInput from "../TextInput";
+import SelectInput from "../SelectInput";
 
-const taskForm = ({
+const TaskForm = ({
   task,
   authors,
   onSave,
@@ -55,7 +55,7 @@ const taskForm = ({
   );
 };
 
-taskForm.propTypes = {
+TaskForm.propTypes = {
   authors: PropTypes.array.isRequired,
   task: PropTypes.object.isRequired,
   errors: PropTypes.object,
@@ -64,4 +64,4 @@ taskForm.propTypes = {
   saving: PropTypes.bool
 };
 
-export default taskForm;
+export default TaskForm;

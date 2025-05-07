@@ -1,5 +1,13 @@
 import React from 'react';
+import TaskForm from './TaskForm.jsx';
+import {newTask} from "../../../tools/mockData.js"
 export default function ManageTaskPage(){
 
-    return <h2>Manage Task</h2>
+    return (<TaskForm 
+    authors = {[]}
+    task = {newTask}
+    onChange = {()=>{}}
+    onSave = {() =>{}}
+    />
+    );
 }
