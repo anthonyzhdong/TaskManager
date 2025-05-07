@@ -45,7 +45,7 @@ export default function ManageTaskPage() {
     function handleSave(event){
         event.preventDefault();
         dispatch(saveTask(task)).then(()=>{
-            navigate("/tasks");
+            navigate("/taskpage");
         });
     
     }
