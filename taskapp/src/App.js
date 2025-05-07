@@ -17,7 +17,7 @@ function App() {
           <Route path = "/" element= {<HomePage/>} />
           <Route path = "/taskpage" element = {<TaskPage />}/>
           <Route path = "/about" element = {<AboutPage/>}/>
-          <Route path = "/manage" element = {<ManageTaskPage/>}/>
+          <Route path = "/task/:slug?" element = {<ManageTaskPage/>}/>
           <Route path = "*" element = {<PageNotFound/>} />
         </Routes>
       </header>

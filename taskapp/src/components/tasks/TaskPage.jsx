@@ -5,9 +5,13 @@ import * as authorActions from "../../redux/actions/authorActions";
 import propTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import TaskList from './TaskList';
+import { Navigate } from "react-router-dom";
 
 class TaskPage extends React.Component{
 
+    state = {
+        redirectToManageTaskPage: false
+    };
     
 
     componentDidMount(){
@@ -30,7 +34,12 @@ class TaskPage extends React.Component{
      render(){
         return (
             <>
+                {this.state.redirectToManageTaskPage && <Navigate to= "/task" />}
                 <h1> Courses </h1>
+                <button
+                    style={{ marginBottom:20 }}
+                    onClick={()  => this.setState({ redirectToManageTaskPage: true })}
+                >Add Task</button>
                 <TaskList tasks = {this.props.tasks}/>
                 {/* { this.props.tasks.map(task => (
                     <div key = {task.title}>{ task.title } </div>

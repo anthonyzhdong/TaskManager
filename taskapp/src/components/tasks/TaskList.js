@@ -16,7 +16,7 @@ const TaskList = ({ tasks }) => (
         return (
           <tr key={task.id}>
             <td>
-              {task.title}
+              <Link to= {"/task/" + task.slug}>{task.title}</Link>
             </td>
             <td>{task.authorName}</td>
             <td>{task.category}</td>
