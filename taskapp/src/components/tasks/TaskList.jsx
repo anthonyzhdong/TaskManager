@@ -22,9 +22,11 @@ const TaskList = ({ tasks }) => (
             <td>{task.categoryName}</td>
             <td>{task.description}</td>
             <td>{task.date ? new Date(task.date).toLocaleDateString() : "Not set"}</td>
-            <button>
-            <Link to = {"/task/" + task.slug}>EDIT</Link>
+            <td>
+              <button>
+                <Link to = {"/task/" + task.slug}>EDIT</Link>
               </button> 
+            </td>
           </tr>
         );
       })}
