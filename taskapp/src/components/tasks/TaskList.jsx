@@ -7,7 +7,7 @@ const TaskList = ({ tasks }) => (
     <thead>
       <tr>
         <th>Title</th>
-        {/* <th>Amount</th> */}
+        <th>Amount</th>
         <th>Category</th>
         <th>Description</th>
         <th>Date</th>
@@ -17,8 +17,9 @@ const TaskList = ({ tasks }) => (
       {tasks.map(task => {
         return (
           <tr key={task.id}>
-            {/* <td>${task.amount ? task.amount.toFixed(2) : "0.00"}</td> */}
+            
             <td>{task.title}</td>
+            <td>${task.amount}</td>
             <td>{task.categoryName}</td>
             <td>{task.description}</td>
             <td>{task.date ? new Date(task.date).toLocaleDateString() : "Not set"}</td>

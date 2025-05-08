@@ -26,6 +26,14 @@ const TaskForm = ({
         error={errors.title}
       />
 
+      <TextInput 
+        name = "amount"
+        label = "Amount"
+        value = {task.amount}
+        onChange = {onChange}
+        error = {errors.amount}
+      />
+
       {/* <div className="mb-3">
         <label htmlFor="amount">Amount ($)</label>
         <div className="field">

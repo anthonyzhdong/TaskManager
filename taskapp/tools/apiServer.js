@@ -78,6 +78,6 @@ function validateTask(task) {
   if (!task.categoryId) return "Category is required.";
   if (!task.description) return "description is required.";
   if (!task.date) return "Date is required.";
-  //if (!task.amount) return "Amount is required";
+  if (!task.amount) return "Amount is required";
   return "";
 }

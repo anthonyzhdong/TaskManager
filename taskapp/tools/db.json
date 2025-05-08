@@ -1,1 +1,118 @@
-{"tasks":[{"id":1,"title":"Securing React Apps with Auth0","slug":"react-auth0-authentication-security","categoryId":1,"description":"JavaScript","date":"2025-01-15T00:00:00.000Z"},{"id":2,"title":"React: The Big Picture","slug":"react-big-picture","categoryId":1,"description":"JavaScript","date":"2025-01-15T00:00:00.000Z"},{"id":3,"title":"Creating Reusable React Components","slug":"react-creating-reusable-components","categoryId":1,"description":"JavaScript","date":"2025-01-15T00:00:00.000Z"},{"id":4,"title":"Building a JavaScript Development Environment","slug":"javascript-development-environment","categoryId":1,"description":"JavaScript","date":"2025-01-15T00:00:00.000Z"},{"id":5,"title":"Building Applications with React and Redux","slug":"react-redux-react-router-es6","categoryId":1,"description":"JavaScript","date":"2025-01-15T00:00:00.000Z"},{"id":6,"title":"Building Applications in React and Flux","slug":"react-flux-building-applications","categoryId":1,"description":"JavaScript","date":"2025-01-15T00:00:00.000Z"},{"id":7,"title":"Clean Code: Writing Code for Humans","slug":"writing-clean-code-humans","categoryId":1,"description":"Software Practices","date":"2025-01-15T00:00:00.000Z"},{"id":8,"title":"Architecting Applications for the Real World","slug":"architecting-applications-dotnet","categoryId":1,"description":"Software Architecture","date":"2025-01-15T00:00:00.000Z"},{"id":9,"title":"Becoming an Outlier: Reprogramming the Developer Mind","slug":"career-reboot-for-developer-mind","categoryId":2,"description":"Career","date":"2025-01-15T00:00:00.000Z"},{"id":10,"title":"Web Component Fundamentals","slug":"web-components-shadow-dom","categoryId":3,"description":"HTML5","date":"2025-01-15T00:00:00.000Z"}],"categories":[{"id":1,"name":"Rent"},{"id":2,"name":"Food"},{"id":3,"name":"Shopping"}]}
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Securing React Apps with Auth0",
+      "amount": "102",
+      "slug": "react-auth0-authentication-security",
+      "categoryId": 1,
+      "description": "JavaScript",
+      "date": "2025-01-15T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "React: The Big Picture",
+      "amount": 100,
+      "slug": "react-big-picture",
+      "categoryId": 1,
+      "description": "JavaScript",
+      "date": "2025-01-15T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "title": "Creating Reusable React Components",
+      "amount": 100,
+      "slug": "react-creating-reusable-components",
+      "categoryId": 1,
+      "description": "JavaScript",
+      "date": "2025-01-15T00:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "title": "Building a JavaScript Development Environment",
+      "amount": 100,
+      "slug": "javascript-development-environment",
+      "categoryId": 1,
+      "description": "JavaScript",
+      "date": "2025-01-15T00:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "title": "Building Applications with React and Redux",
+      "amount": 100,
+      "slug": "react-redux-react-router-es6",
+      "categoryId": 1,
+      "description": "JavaScript",
+      "date": "2025-01-15T00:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "title": "Building Applications in React and Flux",
+      "amount": 100,
+      "slug": "react-flux-building-applications",
+      "categoryId": 1,
+      "description": "JavaScript",
+      "date": "2025-01-15T00:00:00.000Z"
+    },
+    {
+      "id": 7,
+      "title": "Clean Code: Writing Code for Humans",
+      "amount": 100,
+      "slug": "writing-clean-code-humans",
+      "categoryId": 1,
+      "description": "Software Practices",
+      "date": "2025-01-15T00:00:00.000Z"
+    },
+    {
+      "id": 8,
+      "title": "Architecting Applications for the Real World",
+      "amount": 100,
+      "slug": "architecting-applications-dotnet",
+      "categoryId": 1,
+      "description": "Software Architecture",
+      "date": "2025-01-15T00:00:00.000Z"
+    },
+    {
+      "id": 9,
+      "title": "Becoming an Outlier: Reprogramming the Developer Mind",
+      "amount": 100,
+      "slug": "career-reboot-for-developer-mind",
+      "categoryId": 2,
+      "description": "Career",
+      "date": "2025-01-15T00:00:00.000Z"
+    },
+    {
+      "id": 10,
+      "title": "Web Component Fundamentals",
+      "amount": 100,
+      "slug": "web-components-shadow-dom",
+      "categoryId": 3,
+      "description": "HTML5",
+      "date": "2025-01-15T00:00:00.000Z"
+    },
+    {
+      "id": 11,
+      "title": "ad",
+      "categoryId": 1,
+      "description": "ad",
+      "date": "2025-05-08T21:39:39.523Z",
+      "amount": "13",
+      "createdAt": 1746740390353,
+      "slug": "ad"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Rent"
+    },
+    {
+      "id": 2,
+      "name": "Food"
+    },
+    {
+      "id": 3,
+      "name": "Shopping"
+    }
+  ]
+}
