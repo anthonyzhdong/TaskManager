@@ -36,20 +36,26 @@ export default function ManageTaskPage() {
 
     function handleChange(event) {
         const { name, value } = event.target;
-        setTask(prevTask => {
-            const updatedTask = { ...prevTask };
-            if(name === "authorId"){
-                updatedTask[name] = parseInt(value,10);
+        setTask(prevTask => ({
+            // const updatedTask = { ...prevTask };
+            // if(name === "authorId"){
+            //     updatedTask[name] = parseInt(value,10);
 
-            // }else if (name === "amount") {
-            // // Handle amount as a floating-point number with 2 decimal places
-            //     updatedTask[name] = value === "" ? "" : value
-            }else if (name === "date"){
-                updatedTask[name] = value;
-            }else{
-                updatedTask[name] = value;
-            }
-        });
+            // // }else if (name === "amount") {
+            // // // Handle amount as a floating-point number with 2 decimal places
+            // //     updatedTask[name] = value === "" ? "" : value
+            // }else if (name === "date"){
+            //     updatedTask[name] = value;
+            // }else{
+            //     updatedTask[name] = value;
+            // }
+            ...prevTask,
+            [name]: name === "authorId" 
+            ? parseInt(value, 10)
+            : name === "date"
+            ? value
+            : value
+        }));
     }
 
     function handleSave(event){
