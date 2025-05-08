@@ -76,7 +76,7 @@ const tasks = [
     title: "Becoming an Outlier: Reprogramming the Developer Mind",
     //amount: 100.00,
     slug: "career-reboot-for-developer-mind",
-    categoryId: 1,
+    categoryId: 2,
     description: "Career",
     date: new Date("2025-01-15").toISOString()
   },
@@ -85,16 +85,16 @@ const tasks = [
     title: "Web Component Fundamentals",
     //amount: 100.00,
     slug: "web-components-shadow-dom",
-    categoryId: 1,
+    categoryId: 3,
     description: "HTML5",
     date: new Date("2025-01-15").toISOString()
   }
 ];
 
 const categories = [
-  { id: 1, name: "Cory House" },
-  { id: 2, name: "Scott Allen" },
-  { id: 3, name: "Dan Wahlin" }
+  { id: 1, name: "Rent" },
+  { id: 2, name: "Food" },
+  { id: 3, name: "Shopping" }
 ];
 
 const newTask = {

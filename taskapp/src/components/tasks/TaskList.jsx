@@ -17,13 +17,14 @@ const TaskList = ({ tasks }) => (
       {tasks.map(task => {
         return (
           <tr key={task.id}>
-            <td>
-              <Link to= {"/task/" + task.slug}>{task.title}</Link>
-            </td>
             {/* <td>${task.amount ? task.amount.toFixed(2) : "0.00"}</td> */}
+            {task.title}
             <td>{task.categoryName}</td>
             <td>{task.description}</td>
             <td>{task.date ? new Date(task.date).toLocaleDateString() : "Not set"}</td>
+            <button>
+            <Link to = {"/task/" + task.slug}>EDIT</Link>
+              </button> 
           </tr>
         );
       })}
