@@ -41,10 +41,9 @@ export default function ManageTaskPage() {
             if(name === "authorId"){
                 updatedTask[name] = parseInt(value,10);
 
-            }else if (name === "amount") {
-            // Handle amount as a floating-point number with 2 decimal places
-            const floatValue = parseFloat(value);
-            updatedTask[name] = isNaN(floatValue) ? 0 : floatValue;
+            // }else if (name === "amount") {
+            // // Handle amount as a floating-point number with 2 decimal places
+            //     updatedTask[name] = value === "" ? "" : value
             }else if (name === "date"){
                 updatedTask[name] = value;
             }else{

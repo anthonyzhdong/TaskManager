@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import TextInput from "../TextInput.js";
 import SelectInput from "../SelectInput.js";
-
 const TaskForm = ({
   task,
   authors,
@@ -26,6 +25,24 @@ const TaskForm = ({
         onChange={onChange}
         error={errors.title}
       />
+
+      {/* <div className="mb-3">
+        <label htmlFor="amount">Amount ($)</label>
+        <div className="field">
+          <input
+            type="number"
+            name="amount"
+            className="form-control"
+            value={task.amount || ''}
+            onChange={onChange}
+            step="0.01"
+            min="0"
+            placeholder="0.00"
+          />
+          {errors.amount && <div className="alert alert-danger">{errors.amount}</div>}
+        </div>
+      </div> */}
+
 
       <SelectInput
         name="authorId"
