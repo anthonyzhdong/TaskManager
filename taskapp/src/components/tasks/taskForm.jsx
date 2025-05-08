@@ -48,6 +48,20 @@ const TaskForm = ({
         error={errors.description}
       />
 
+      <div className="mb-3">
+        <label htmlFor="date">Date</label>
+        <div className="field">
+          <input
+            type="date"
+            name="date"
+            className="form-control"
+            value={task.date ? new Date(task.date).toISOString().split('T')[0] : ''}
+            onChange={onChange}
+          />
+          {errors.date && <div className="alert alert-danger">{errors.date}</div>}
+        </div>
+      </div>
+
       <button type="submit" disabled={saving} className="btn btn-primary">
         {saving ? "Saving..." : "Save"}
       </button>

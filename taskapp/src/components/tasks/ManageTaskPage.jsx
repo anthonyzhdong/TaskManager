@@ -38,7 +38,11 @@ export default function ManageTaskPage() {
         const { name, value } = event.target;
         setTask(prevTask => ({
             ...prevTask,
-            [name]: name === "authorId" ? parseInt(value, 10) : value
+            [name]: name === "authorId" 
+            ? parseInt(value, 10)
+            : name === "date"
+            ? value
+            : value
         }));
     }
 
@@ -49,6 +53,7 @@ export default function ManageTaskPage() {
         });
     
     }
+
 
     return (<TaskForm
         authors={authors}

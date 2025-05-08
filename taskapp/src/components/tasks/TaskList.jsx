@@ -8,7 +8,8 @@ const TaskList = ({ tasks }) => (
       <tr>
         <th>Title</th>
         <th>Author</th>
-        <th>description</th>
+        <th>Description</th>
+        <th>Date</th>
       </tr>
     </thead>
     <tbody>
@@ -20,6 +21,7 @@ const TaskList = ({ tasks }) => (
             </td>
             <td>{task.authorName}</td>
             <td>{task.description}</td>
+            <td>{task.date ? new Date(task.date).toLocaleDateString() : "Not set"}</td>
           </tr>
         );
       })}
