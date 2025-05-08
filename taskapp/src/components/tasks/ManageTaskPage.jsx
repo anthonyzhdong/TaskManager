@@ -36,14 +36,21 @@ export default function ManageTaskPage() {
 
     function handleChange(event) {
         const { name, value } = event.target;
-        setTask(prevTask => ({
-            ...prevTask,
-            [name]: name === "authorId" 
-            ? parseInt(value, 10)
-            : name === "date"
-            ? value
-            : value
-        }));
+        setTask(prevTask => {
+            const updatedTask = { ...prevTask };
+            if(name === "authorId"){
+                updatedTask[name] = parseInt(value,10);
+
+            }else if (name === "amount") {
+            // Handle amount as a floating-point number with 2 decimal places
+            const floatValue = parseFloat(value);
+            updatedTask[name] = isNaN(floatValue) ? 0 : floatValue;
+            }else if (name === "date"){
+                updatedTask[name] = value;
+            }else{
+                updatedTask[name] = value;
+            }
+        });
     }
 
     function handleSave(event){
