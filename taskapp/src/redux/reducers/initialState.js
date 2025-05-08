@@ -1,4 +1,5 @@
 export default {
     tasks: [],
-    categories: []
+    categories: [],
+    transactionTypes: []
 };

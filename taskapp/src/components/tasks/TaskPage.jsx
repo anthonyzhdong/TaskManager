@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import * as taskActions from "../../redux/actions/taskActions.jsx";
 import * as categoryActions from "../../redux/actions/categoryActions.jsx";
+import * as transactionTypeActions from "../../redux/actions/transactionTypeActions.jsx";
 import propTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import TaskList from './TaskList.jsx';
@@ -16,7 +17,7 @@ class TaskPage extends React.Component{
 
     componentDidMount(){
 
-        const { tasks, categories, actions } = this.props;
+        const { tasks, categories, transactionTypes, actions } = this.props;
         // so it only loads once
         if(tasks.length === 0){
             actions.loadTasks().catch(error=>{
@@ -26,6 +27,11 @@ class TaskPage extends React.Component{
         if(categories.length === 0){
             actions.loadCategories().catch(error=>{
                 alert("Loading categories failed"+error);
+            });
+        }   
+        if(transactionTypes.length === 0){
+            actions.loadTransactionTypes().catch(error=>{
+                alert("Loading transactionTypes failed"+error);
             });
         }   
     }
@@ -56,7 +62,8 @@ TaskPage.propTypes = {
     actions: propTypes.object.isRequired,
     tasks: propTypes.array.isRequired,
     dispatch: propTypes.func.isRequired,
-    categories: propTypes.array.isRequired
+    categories: propTypes.array.isRequired,
+    transactionTypes: propTypes.array.isRequired
 };
 
 function mapStateToProps(state, ownProps){
@@ -66,10 +73,12 @@ function mapStateToProps(state, ownProps){
         tasks: state.categories.length === 0 ? [] : state.tasks.map(task =>{
             return{
             ...task,
-            categoryName: state.categories.find(a => a.id === task.categoryId).name
+            categoryName: state.categories.find(a => a.id === task.categoryId).name,
+            transactionTypeName: state.transactionTypes.find(t => t.id === task.transactionType).name
             };
         }),
-        categories: state.categories
+        categories: state.categories,
+        transactionTypes: state.transactionTypes
     };
 
 }
@@ -78,7 +87,8 @@ function mapDispatchToProps(dispatch){
     return {
         actions: {
             loadTasks: bindActionCreators(taskActions.loadTasks, dispatch),
-            loadCategories: bindActionCreators(categoryActions.loadCategories, dispatch)
+            loadCategories: bindActionCreators(categoryActions.loadCategories, dispatch),
+            loadTransactionTypes: bindActionCreators(transactionTypeActions.loadTransactionTypes, dispatch)
         }
     };
 }

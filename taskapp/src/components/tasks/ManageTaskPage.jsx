@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import TaskForm from './TaskForm.jsx';
+import TaskForm from './taskForm.jsx';
 import { newTask } from "../../../tools/mockData.js"
 import { useDispatch, useSelector } from "react-redux";
 import { loadCategories } from "../../redux/actions/categoryActions.jsx";
+import { loadTransactionTypess } from "../../redux/actions/transactionTypeActions.jsx";
 import { useNavigate, useParams } from "react-router-dom";
 import { loadTasks, saveTask } from "../../redux/actions/taskActions.jsx";
 
 
 export default function ManageTaskPage() {
     const categories = useSelector(state => state.categories);
+    const transactionTypes = useSelector(state => state.transactionTypes);
     const tasks = useSelector(state => state.tasks);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -34,6 +36,14 @@ export default function ManageTaskPage() {
         }
     }, [categories]);
 
+    useEffect(() => {
+        if (transactionTypes.length === 0) {
+            dispatch(loadTransactionTypes()).catch(error => {
+                alert("loading transactionTypes failed" + error);
+            });
+        }
+    }, [transactionTypes]);
+
     function handleChange(event) {
         const { name, value } = event.target;
         setTask(prevTask => ({
@@ -50,7 +60,7 @@ export default function ManageTaskPage() {
             //     updatedTask[name] = value;
             // }
             ...prevTask,
-            [name]: name === "categoryId" 
+            [name]: name === "categoryId" || name === "transactionType"
             ? parseInt(value, 10)
             : name === "date"
             ? value
@@ -69,6 +79,7 @@ export default function ManageTaskPage() {
 
     return (<TaskForm
         categories={categories}
+        transactionTypes = {transactionTypes}
         task={task}
         onChange={handleChange}
         onSave={handleSave}

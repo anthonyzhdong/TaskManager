@@ -5,6 +5,7 @@ import SelectInput from "../SelectInput.js";
 const TaskForm = ({
   task,
   categories,
+  transactionTypes,
   onSave,
   onChange,
   saving = false,
@@ -24,6 +25,19 @@ const TaskForm = ({
         value={task.title}
         onChange={onChange}
         error={errors.title}
+      />
+
+      <SelectInput
+        name="transactionType"
+        label="Transaction Type"
+        value={task.transactionType || ""}
+        defaultOption="Select Transaction Type"
+        options={transactionTypes.map(transactionType => ({
+          value: transactionType.id,
+          text: transactionType.name
+        }))}
+        onChange={onChange}
+        error={errors.transactionType}
       />
 
       <TextInput 
@@ -96,6 +110,7 @@ const TaskForm = ({
 
 TaskForm.propTypes = {
   categories: PropTypes.array.isRequired,
+  types: PropTypes.array.isRequired,
   task: PropTypes.object.isRequired,
   errors: PropTypes.object,
   onSave: PropTypes.func.isRequired,

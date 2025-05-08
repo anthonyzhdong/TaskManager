@@ -7,6 +7,7 @@ const TaskList = ({ tasks }) => (
     <thead>
       <tr>
         <th>Title</th>
+        <th>Type</th>
         <th>Amount</th>
         <th>Category</th>
         <th>Description</th>
@@ -19,6 +20,7 @@ const TaskList = ({ tasks }) => (
           <tr key={task.id}>
             
             <td>{task.title}</td>
+            <td>{task.transactionTypeName}</td>
             <td>${task.amount}</td>
             <td>{task.categoryName}</td>
             <td>{task.description}</td>
