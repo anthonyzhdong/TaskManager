@@ -41,11 +41,11 @@ const TaskForm = ({
       />
 
       <TextInput
-        name="category"
-        label="Category"
-        value={task.category}
+        name="description"
+        label="Description"
+        value={task.description}
         onChange={onChange}
-        error={errors.category}
+        error={errors.description}
       />
 
       <button type="submit" disabled={saving} className="btn btn-primary">
