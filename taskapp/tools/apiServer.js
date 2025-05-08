@@ -75,7 +75,7 @@ function createSlug(value) {
 
 function validateTask(task) {
   if (!task.title) return "Title is required.";
-  if (!task.authorId) return "Author is required.";
+  if (!task.categoryId) return "Category is required.";
   if (!task.description) return "description is required.";
   if (!task.date) return "Date is required.";
   //if (!task.amount) return "Amount is required";

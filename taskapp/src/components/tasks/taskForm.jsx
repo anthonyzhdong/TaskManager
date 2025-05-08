@@ -4,7 +4,7 @@ import TextInput from "../TextInput.js";
 import SelectInput from "../SelectInput.js";
 const TaskForm = ({
   task,
-  authors,
+  categories,
   onSave,
   onChange,
   saving = false,
@@ -45,16 +45,16 @@ const TaskForm = ({
 
 
       <SelectInput
-        name="authorId"
-        label="Author"
-        value={task.authorId || ""}
-        defaultOption="Select Author"
-        options={authors.map(author => ({
-          value: author.id,
-          text: author.name
+        name="categoryId"
+        label="Categories"
+        value={task.categoryId || ""}
+        defaultOption="Select Category"
+        options={categories.map(category => ({
+          value: category.id,
+          text: category.name
         }))}
         onChange={onChange}
-        error={errors.author}
+        error={errors.category}
       />
 
       <TextInput
@@ -87,7 +87,7 @@ const TaskForm = ({
 };
 
 TaskForm.propTypes = {
-  authors: PropTypes.array.isRequired,
+  categories: PropTypes.array.isRequired,
   task: PropTypes.object.isRequired,
   errors: PropTypes.object,
   onSave: PropTypes.func.isRequired,

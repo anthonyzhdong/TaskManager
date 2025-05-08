@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import TaskForm from './TaskForm.jsx';
 import { newTask } from "../../../tools/mockData.js"
 import { useDispatch, useSelector } from "react-redux";
-import { loadAuthors } from "../../redux/actions/authorActions.jsx";
+import { loadCategories } from "../../redux/actions/categoryActions.jsx";
 import { useNavigate, useParams } from "react-router-dom";
 import { loadTasks, saveTask } from "../../redux/actions/taskActions.jsx";
 
 
 export default function ManageTaskPage() {
-    const authors = useSelector(state => state.authors);
+    const categories = useSelector(state => state.categories);
     const tasks = useSelector(state => state.tasks);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -27,12 +27,12 @@ export default function ManageTaskPage() {
 
 
     useEffect(() => {
-        if (authors.length === 0) {
-            dispatch(loadAuthors()).catch(error => {
-                alert("loading authors failed" + error);
+        if (categories.length === 0) {
+            dispatch(loadCategories()).catch(error => {
+                alert("loading categories failed" + error);
             });
         }
-    }, [authors]);
+    }, [categories]);
 
     function handleChange(event) {
         const { name, value } = event.target;
@@ -50,7 +50,7 @@ export default function ManageTaskPage() {
             //     updatedTask[name] = value;
             // }
             ...prevTask,
-            [name]: name === "authorId" 
+            [name]: name === "categoryId" 
             ? parseInt(value, 10)
             : name === "date"
             ? value
@@ -68,7 +68,7 @@ export default function ManageTaskPage() {
 
 
     return (<TaskForm
-        authors={authors}
+        categories={categories}
         task={task}
         onChange={handleChange}
         onSave={handleSave}

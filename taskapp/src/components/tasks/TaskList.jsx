@@ -8,7 +8,7 @@ const TaskList = ({ tasks }) => (
       <tr>
         <th>Title</th>
         {/* <th>Amount</th> */}
-        <th>Author</th>
+        <th>Category</th>
         <th>Description</th>
         <th>Date</th>
       </tr>
@@ -21,7 +21,7 @@ const TaskList = ({ tasks }) => (
               <Link to= {"/task/" + task.slug}>{task.title}</Link>
             </td>
             {/* <td>${task.amount ? task.amount.toFixed(2) : "0.00"}</td> */}
-            <td>{task.authorName}</td>
+            <td>{task.categoryName}</td>
             <td>{task.description}</td>
             <td>{task.date ? new Date(task.date).toLocaleDateString() : "Not set"}</td>
           </tr>

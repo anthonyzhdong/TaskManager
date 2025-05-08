@@ -4,7 +4,7 @@ const tasks = [
     title: "Securing React Apps with Auth0",
     //amount: 100.00,
     slug: "react-auth0-authentication-security",
-    authorId: 1,
+    categoryId: 1,
     description: "JavaScript",
     date: new Date("2025-01-15").toISOString()
   },
@@ -13,7 +13,7 @@ const tasks = [
     title: "React: The Big Picture",
     //amount: 100.00,
     slug: "react-big-picture",
-    authorId: 1,
+    categoryId: 1,
     description: "JavaScript",
     date: new Date("2025-01-15").toISOString()
   },
@@ -22,7 +22,7 @@ const tasks = [
     title: "Creating Reusable React Components",
     //amount: 100.00,
     slug: "react-creating-reusable-components",
-    authorId: 1,
+    categoryId: 1,
     description: "JavaScript",
     date: new Date("2025-01-15").toISOString()
   },
@@ -31,7 +31,7 @@ const tasks = [
     title: "Building a JavaScript Development Environment",
     //amount: 100.00,
     slug: "javascript-development-environment",
-    authorId: 1,
+    categoryId: 1,
     description: "JavaScript",
     date: new Date("2025-01-15").toISOString()
   },
@@ -40,7 +40,7 @@ const tasks = [
     title: "Building Applications with React and Redux",
     //amount: 100.00,
     slug: "react-redux-react-router-es6",
-    authorId: 1,
+    categoryId: 1,
     description: "JavaScript",
     date: new Date("2025-01-15").toISOString()
   },
@@ -49,7 +49,7 @@ const tasks = [
     title: "Building Applications in React and Flux",
     //amount: 100.00,
     slug: "react-flux-building-applications",
-    authorId: 1,
+    categoryId: 1,
     description: "JavaScript",
     date: new Date("2025-01-15").toISOString()
   },
@@ -58,7 +58,7 @@ const tasks = [
     title: "Clean Code: Writing Code for Humans",
     //amount: 100.00,
     slug: "writing-clean-code-humans",
-    authorId: 1,
+    categoryId: 1,
     description: "Software Practices",
     date: new Date("2025-01-15").toISOString()
   },
@@ -67,7 +67,7 @@ const tasks = [
     title: "Architecting Applications for the Real World",
     //amount: 100.00,
     slug: "architecting-applications-dotnet",
-    authorId: 1,
+    categoryId: 1,
     description: "Software Architecture",
     date: new Date("2025-01-15").toISOString()
   },
@@ -76,7 +76,7 @@ const tasks = [
     title: "Becoming an Outlier: Reprogramming the Developer Mind",
     //amount: 100.00,
     slug: "career-reboot-for-developer-mind",
-    authorId: 1,
+    categoryId: 1,
     description: "Career",
     date: new Date("2025-01-15").toISOString()
   },
@@ -85,13 +85,13 @@ const tasks = [
     title: "Web Component Fundamentals",
     //amount: 100.00,
     slug: "web-components-shadow-dom",
-    authorId: 1,
+    categoryId: 1,
     description: "HTML5",
     date: new Date("2025-01-15").toISOString()
   }
 ];
 
-const authors = [
+const categories = [
   { id: 1, name: "Cory House" },
   { id: 2, name: "Scott Allen" },
   { id: 3, name: "Dan Wahlin" }
@@ -101,7 +101,7 @@ const newTask = {
   id: null,
   title: "",
   //amount: null,
-  authorId: null,
+  categoryId: null,
   description: "",
   date: new Date().toISOString()
 };
@@ -110,5 +110,5 @@ const newTask = {
 module.exports = {
   newTask,
   tasks,
-  authors
+  categories
 };
