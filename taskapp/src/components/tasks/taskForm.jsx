@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import TextInput from "../TextInput";
-import SelectInput from "../SelectInput";
+import TextInput from "../TextInput.js";
+import SelectInput from "../SelectInput.js";
 
 const TaskForm = ({
   task,

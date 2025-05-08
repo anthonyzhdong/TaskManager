@@ -2,8 +2,8 @@ import React from 'react';
 import {Routes, Route} from 'react-router-dom'
 import HomePage from './components/home/Home.jsx';
 import './App.css';
-import Header from './components/Header';
-import PageNotFound from './components/PageNotFound';
+import Header from './components/Header.jsx';
+import PageNotFound from './components/PageNotFound.jsx';
 import AboutPage from './components/about/About.jsx';
 import TaskPage from './components/tasks/TaskPage.jsx';
 import ManageTaskPage from './components/tasks/ManageTaskPage.jsx';

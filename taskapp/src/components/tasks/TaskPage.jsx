@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
-import * as taskActions from "../../redux/actions/taskActions";
-import * as authorActions from "../../redux/actions/authorActions";
+import * as taskActions from "../../redux/actions/taskActions.jsx";
+import * as authorActions from "../../redux/actions/authorActions.jsx";
 import propTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import TaskList from './TaskList.jsx';

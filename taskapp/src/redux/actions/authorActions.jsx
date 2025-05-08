@@ -1,5 +1,5 @@
-import * as authorApi from "../../api/authorApi";
-import * as types from "./actionTypes";
+import * as authorApi from "../../api/authorApi.js";
+import * as types from "./actionTypes.jsx";
 
 // returns an action object aka task
 // type is the action that the reducer performs, task is the data added to the store

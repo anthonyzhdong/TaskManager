@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useState } from "react-redux"
-import * as createTask from "../../redux/actions/taskActions";
+import * as createTask from "../../redux/actions/taskActions.jsx";
 
 //connect to redux store using hooks
 

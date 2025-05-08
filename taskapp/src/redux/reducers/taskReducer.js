@@ -1,7 +1,7 @@
 // empty array as that'll store an array of tasks
-import initialState from "./initialState";
+import initialState from "./initialState.js";
 
-import * as types from "../actions/actionTypes";
+import * as types from "../actions/actionTypes.jsx";
 export default function taskReducer(state = initialState.tasks, action){
     switch(action.type){
         // looking for a specific action

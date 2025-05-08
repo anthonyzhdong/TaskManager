@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import TaskForm from './TaskForm.jsx';
 import { newTask } from "../../../tools/mockData.js"
 import { useDispatch, useSelector } from "react-redux";
-import { loadAuthors } from "../../redux/actions/authorActions.js";
+import { loadAuthors } from "../../redux/actions/authorActions.jsx";
 import { useNavigate, useParams } from "react-router-dom";
-import { loadTasks, saveTask } from "../../redux/actions/taskActions.js";
+import { loadTasks, saveTask } from "../../redux/actions/taskActions.jsx";
 
 
 export default function ManageTaskPage() {
