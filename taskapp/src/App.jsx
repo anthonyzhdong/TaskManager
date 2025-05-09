@@ -6,7 +6,7 @@ import Header from './components/Header.jsx';
 import PageNotFound from './components/PageNotFound.jsx';
 import AboutPage from './components/about/About.jsx';
 import TransactionPage from './components/transactions/TransactionPage.jsx';
-import ManageTransactionPage from './components/transactions/ManageTransactionPage.jsx';
+import ManageTransactionPage from './components/transactions/ManagetransactionPage.jsx';
 
 function App() {
   return (

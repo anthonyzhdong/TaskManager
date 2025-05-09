@@ -1,122 +1,133 @@
+// In tools/mockData.js - Updated with realistic financial transactions
 const transactions = [
   {
     id: 1,
-    title: "Securing React Apps with Auth0",
-    transactionType: 1,
-    amount: 100.00,
-    slug: "react-auth0-authentication-security",
-    categoryId: 1,
-    description: "JavaScript",
-    date: new Date("2025-01-15").toISOString()
+    title: "Monthly Apartment Rent",
+    amount: 1200.00,
+    slug: "monthly-apartment-rent",
+    categoryId: 1, // Rent
+    transactionType: 2, // Expense
+    description: "Monthly rent payment for apartment",
+    date: new Date("2025-05-01").toISOString()
   },
   {
     id: 2,
-    title: "React: The Big Picture",
-    transactionType: 1,
-    amount: 100.00,
-    slug: "react-big-picture",
-    categoryId: 1,
-    description: "JavaScript",
-    date: new Date("2025-01-15").toISOString()
+    title: "Grocery Shopping - Whole Foods",
+    amount: 87.32,
+    slug: "grocery-shopping-whole-foods",
+    categoryId: 2, // Food
+    transactionType: 2, // Expense
+    description: "Weekly grocery shopping",
+    date: new Date("2025-05-03").toISOString()
   },
   {
     id: 3,
-    title: "Creating Reusable React Components",
-    transactionType: 1,
-    amount: 100.00,
-    slug: "react-creating-reusable-components",
-    categoryId: 1,
-    description: "JavaScript",
-    date: new Date("2025-01-15").toISOString()
+    title: "Internet Bill - May",
+    amount: 65.99,
+    slug: "internet-bill-may",
+    categoryId: 4, // Utilities
+    transactionType: 2, // Expense
+    description: "Monthly internet service payment",
+    date: new Date("2025-05-05").toISOString()
   },
   {
     id: 4,
-    title: "Building a JavaScript Development Environment",
-    transactionType: 1,
-    amount: 100.00,
-    slug: "javascript-development-environment",
-    categoryId: 1,
-    description: "JavaScript",
-    date: new Date("2025-01-15").toISOString()
+    title: "Biweekly Salary Deposit",
+    amount: 2150.50,
+    slug: "biweekly-salary-deposit",
+    categoryId: 5, // Income
+    transactionType: 1, // Income
+    description: "Direct deposit from employer",
+    date: new Date("2025-05-07").toISOString()
   },
   {
     id: 5,
-    title: "Building Applications with React and Redux",
-    transactionType: 1,
-    amount: 100.00,
-    slug: "react-redux-react-router-es6",
-    categoryId: 1,
-    description: "JavaScript",
-    date: new Date("2025-01-15").toISOString()
+    title: "Dinner at Olive Garden",
+    amount: 42.75,
+    slug: "dinner-at-olive-garden",
+    categoryId: 2, // Food
+    transactionType: 2, // Expense
+    description: "Dinner with friends",
+    date: new Date("2025-05-08").toISOString()
   },
   {
     id: 6,
-    title: "Building Applications in React and Flux",
-    transactionType: 2,
-    amount: 100.00,
-    slug: "react-flux-building-applications",
-    categoryId: 1,
-    description: "JavaScript",
-    date: new Date("2025-01-15").toISOString()
+    title: "New Shoes - Nike",
+    amount: 89.99,
+    slug: "new-shoes-nike",
+    categoryId: 3, // Shopping
+    transactionType: 2, // Expense
+    description: "Running shoes",
+    date: new Date("2025-05-08").toISOString()
   },
   {
     id: 7,
-    title: "Clean Code: Writing Code for Humans",
-    transactionType: 2,
-    amount: 100.00,
-    slug: "writing-clean-code-humans",
-    categoryId: 1,
-    description: "Software Practices",
-    date: new Date("2025-01-15").toISOString()
+    title: "Mobile Phone Bill",
+    amount: 75.00,
+    slug: "mobile-phone-bill",
+    categoryId: 4, // Utilities
+    transactionType: 2, // Expense
+    description: "Monthly phone service",
+    date: new Date("2025-05-09").toISOString()
   },
   {
     id: 8,
-    title: "Architecting Applications for the Real World",
-    transactionType: 2,
-    amount: 100.00,
-    slug: "architecting-applications-dotnet",
-    categoryId: 1,
-    description: "Software Architecture",
-    date: new Date("2025-01-15").toISOString()
+    title: "Freelance Project Payment",
+    amount: 350.00,
+    slug: "freelance-project-payment",
+    categoryId: 5, // Income
+    transactionType: 1, // Income
+    description: "Web design project for client",
+    date: new Date("2025-05-10").toISOString()
   },
   {
     id: 9,
-    title: "Becoming an Outlier: Reprogramming the Developer Mind",
-    transactionType: 2,
-    amount: 100.00,
-    slug: "career-reboot-for-developer-mind",
-    categoryId: 2,
-    description: "Career",
-    date: new Date("2025-01-15").toISOString()
+    title: "Electric Bill - May",
+    amount: 78.45,
+    slug: "electric-bill-may",
+    categoryId: 4, // Utilities
+    transactionType: 2, // Expense
+    description: "Monthly electricity bill",
+    date: new Date("2025-05-12").toISOString()
   },
   {
     id: 10,
-    title: "Web Component Fundamentals",
-    transactionType: 2,
-    amount: 100.00,
-    slug: "web-components-shadow-dom",
-    categoryId: 3,
-    description: "HTML5",
-    date: new Date("2025-01-15").toISOString()
+    title: "Online Course Subscription",
+    amount: 19.99,
+    slug: "online-course-subscription",
+    categoryId: 6, // Education
+    transactionType: 2, // Expense
+    description: "Monthly subscription for coding courses",
+    date: new Date("2025-05-13").toISOString()
   }
 ];
 
-const categories = [
-  { id: 1, name: "Rent" },
-  { id: 2, name: "Food" },
-  { id: 3, name: "Shopping" }
-];
-
+// Updated transaction types with better descriptions
 const transactionTypes = [
   { id: 1, name: "Income" },
   { id: 2, name: "Expense" }
 ];
 
+// Expanded categories relevant to personal finance
+const categories = [
+  { id: 1, name: "Rent/Mortgage" },
+  { id: 2, name: "Food & Dining" },
+  { id: 3, name: "Shopping" },
+  { id: 4, name: "Utilities" },
+  { id: 5, name: "Income" },
+  { id: 6, name: "Education" },
+  { id: 7, name: "Entertainment" },
+  { id: 8, name: "Transportation" },
+  { id: 9, name: "Health & Fitness" },
+  { id: 10, name: "Travel" }
+];
+
+// Template for a new transaction
 const newTransaction = {
   id: null,
   title: "",
-  transactionType: null,
   amount: "",
+  transactionType: null,
   categoryId: null,
   description: "",
   date: new Date().toISOString()
