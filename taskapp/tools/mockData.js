@@ -1,4 +1,4 @@
-const tasks = [
+const transactions = [
   {
     id: 1,
     title: "Securing React Apps with Auth0",
@@ -112,7 +112,7 @@ const transactionTypes = [
   { id: 2, name: "Expense" }
 ];
 
-const newTask = {
+const newTransaction = {
   id: null,
   title: "",
   transactionType: null,
@@ -124,8 +124,8 @@ const newTask = {
 
 // Using CommonJS style export so we can consume via Node (without using Babel-node)
 module.exports = {
-  newTask,
-  tasks,
+  newTransaction,
+  transactions,
   categories,
   transactionTypes
 };

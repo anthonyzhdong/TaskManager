@@ -5,8 +5,8 @@ import './App.css';
 import Header from './components/Header.jsx';
 import PageNotFound from './components/PageNotFound.jsx';
 import AboutPage from './components/about/About.jsx';
-import TaskPage from './components/tasks/TaskPage.jsx';
-import ManageTaskPage from './components/tasks/ManageTaskPage.jsx';
+import TransactionPage from './components/transactions/TransactionPage.jsx';
+import ManageTransactionPage from './components/transactions/ManageTransactionPage.jsx';
 
 function App() {
   return (
@@ -15,9 +15,9 @@ function App() {
         <Header/>
         <Routes>
           <Route path = "/" element= {<HomePage/>} />
-          <Route path = "/taskpage" element = {<TaskPage />}/>
+          <Route path = "/transactionpage" element = {<TransactionPage />}/>
           <Route path = "/about" element = {<AboutPage/>}/>
-          <Route path = "/task/:slug?" element = {<ManageTaskPage/>}/>
+          <Route path = "/transaction/:slug?" element = {<ManageTransactionPage/>}/>
           <Route path = "*" element = {<PageNotFound/>} />
         </Routes>
       </header>

@@ -44,8 +44,8 @@ server.use((req, res, next) => {
   next();
 });
 
-server.post("/tasks/", function(req, res, next) {
-  const error = validateTask(req.body);
+server.post("/transaction/", function(req, res, next) {
+  const error = validateTransaction(req.body);
   if (error) {
     res.status(400).send(error);
   } else {
@@ -73,12 +73,12 @@ function createSlug(value) {
     .toLowerCase();
 }
 
-function validateTask(task) {
-  if (!task.title) return "Title is required.";
-  if (!task.transactionType) return "transactionType is required.";
-  if (!task.categoryId) return "Category is required.";
-  if (!task.description) return "description is required.";
-  if (!task.date) return "Date is required.";
-  if (!task.amount) return "Amount is required";
+function validateTransaction(transaction) {
+  if (!transaction.title) return "Title is required.";
+  if (!transaction.transactionType) return "transactionType is required.";
+  if (!transaction.categoryId) return "Category is required.";
+  if (!transaction.description) return "description is required.";
+  if (!transaction.date) return "Date is required.";
+  if (!transaction.amount) return "Amount is required";
   return "";
 }

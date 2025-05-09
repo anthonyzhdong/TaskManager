@@ -1,31 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import TaskForm from './taskForm.jsx';
-import { newTask } from "../../../tools/mockData.js"
+import TransactionForm from './transactionForm.jsx';
+import { newTransaction } from "../../../tools/mockData.js"
 import { useDispatch, useSelector } from "react-redux";
 import { loadCategories } from "../../redux/actions/categoryActions.jsx";
-import { loadTransactionTypess } from "../../redux/actions/transactionTypeActions.jsx";
+import { loadTransactionTypes } from "../../redux/actions/transactionTypeActions.jsx";
 import { useNavigate, useParams } from "react-router-dom";
-import { loadTasks, saveTask } from "../../redux/actions/taskActions.jsx";
+import { loadTransactions, saveTransaction } from "../../redux/actions/transactionActions.jsx";
 
 
-export default function ManageTaskPage() {
+export default function ManageTransactionPage() {
     const categories = useSelector(state => state.categories);
     const transactionTypes = useSelector(state => state.transactionTypes);
-    const tasks = useSelector(state => state.tasks);
+    const transactions = useSelector(state => state.transactions);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [task, setTask] = useState(newTask);
+    const [transaction, setTransaction] = useState(newTransaction);
     const { slug } = useParams();
 
     useEffect(() => {
-        if (tasks.length === 0) {
-            dispatch(loadTasks()).catch(error => {
-                alert("loading tasks failed" + error);
+        if (transactions.length === 0) {
+            dispatch(loadTransactions()).catch(error => {
+                alert("loading transactionks failed" + error);
             });
         } else if (slug) {
-            setTask(tasks.find(task => task.slug === slug) || newTask);
+            setTransaction(transactions.find(transaction => transaction.slug === slug) || newTransaction);
         }
-    }, [tasks, slug]);
+    }, [transactions, slug]);
 
 
     useEffect(() => {
@@ -46,7 +46,7 @@ export default function ManageTaskPage() {
 
     function handleChange(event) {
         const { name, value } = event.target;
-        setTask(prevTask => ({
+        setTransaction(prevTransaction => ({
             // const updatedTask = { ...prevTask };
             // if(name === "authorId"){
             //     updatedTask[name] = parseInt(value,10);
@@ -59,7 +59,7 @@ export default function ManageTaskPage() {
             // }else{
             //     updatedTask[name] = value;
             // }
-            ...prevTask,
+            ...prevTransaction,
             [name]: name === "categoryId" || name === "transactionType"
             ? parseInt(value, 10)
             : name === "date"
@@ -70,17 +70,17 @@ export default function ManageTaskPage() {
 
     function handleSave(event){
         event.preventDefault();
-        dispatch(saveTask(task)).then(()=>{
-            navigate("/taskpage");
+        dispatch(saveTransaction(transaction)).then(()=>{
+            navigate("/transactionpage");
         });
     
     }
 
 
-    return (<TaskForm
+    return (<TransactionForm
         categories={categories}
         transactionTypes = {transactionTypes}
-        task={task}
+        transaction={transaction}
         onChange={handleChange}
         onSave={handleSave}
     />

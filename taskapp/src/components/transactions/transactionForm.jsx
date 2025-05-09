@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import TextInput from "../TextInput.js";
 import SelectInput from "../SelectInput.js";
-const TaskForm = ({
-  task,
+const TransactionForm = ({
+  transaction,
   categories,
   transactionTypes,
   onSave,
@@ -13,7 +13,7 @@ const TaskForm = ({
 }) => {
   return (
     <form onSubmit={onSave}>
-      <h2>{task.id ? "Edit" : "Add"} task</h2>
+      <h2>{transaction.id ? "Edit" : "Add"} transaction</h2>
       {errors.onSave && (
         <div className="alert alert-danger" role="alert">
           {errors.onSave}
@@ -22,7 +22,7 @@ const TaskForm = ({
       <TextInput
         name="title"
         label="Title"
-        value={task.title}
+        value={transaction.title}
         onChange={onChange}
         error={errors.title}
       />
@@ -30,7 +30,7 @@ const TaskForm = ({
       <SelectInput
         name="transactionType"
         label="Transaction Type"
-        value={task.transactionType || ""}
+        value={transaction.transactionType || ""}
         defaultOption="Select Transaction Type"
         options={transactionTypes.map(transactionType => ({
           value: transactionType.id,
@@ -43,7 +43,7 @@ const TaskForm = ({
       <TextInput 
         name = "amount"
         label = "Amount"
-        value = {task.amount}
+        value = {transaction.amount}
         onChange = {onChange}
         error = {errors.amount}
       />
@@ -55,7 +55,7 @@ const TaskForm = ({
             type="number"
             name="amount"
             className="form-control"
-            value={task.amount || ''}
+            value={transaction.amount || ''}
             onChange={onChange}
             step="0.01"
             min="0"
@@ -69,7 +69,7 @@ const TaskForm = ({
       <SelectInput
         name="categoryId"
         label="Categories"
-        value={task.categoryId || ""}
+        value={transaction.categoryId || ""}
         defaultOption="Select Category"
         options={categories.map(category => ({
           value: category.id,
@@ -82,7 +82,7 @@ const TaskForm = ({
       <TextInput
         name="description"
         label="Description"
-        value={task.description}
+        value={transaction.description}
         onChange={onChange}
         error={errors.description}
       />
@@ -94,7 +94,7 @@ const TaskForm = ({
             type="date"
             name="date"
             className="form-control"
-            value={task.date ? new Date(task.date).toISOString().split('T')[0] : ''}
+            value={transaction.date ? new Date(transaction.date).toISOString().split('T')[0] : ''}
             onChange={onChange}
           />
           {errors.date && <div className="alert alert-danger">{errors.date}</div>}
@@ -107,15 +107,14 @@ const TaskForm = ({
     </form>
   );
 };
-
-TaskForm.propTypes = {
+TransactionForm.propTypes = {
   categories: PropTypes.array.isRequired,
   types: PropTypes.array.isRequired,
-  task: PropTypes.object.isRequired,
+  transaction: PropTypes.object.isRequired,
   errors: PropTypes.object,
   onSave: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   saving: PropTypes.bool
 };
 
-export default TaskForm;
+export default TransactionForm;
