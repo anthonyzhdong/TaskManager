@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import TextInput from "../TextInput.js";
-import SelectInput from "../SelectInput.js";
+import TextInput from "../TextInput.jsx";
+import SelectInput from "../SelectInput.jsx";
 const TransactionForm = ({
   transaction,
   categories,

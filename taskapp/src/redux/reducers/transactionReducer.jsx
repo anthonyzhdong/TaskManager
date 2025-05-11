@@ -1,5 +1,5 @@
 // empty array as that'll store an array of tasks
-import initialState from "./initialState.js";
+import initialState from "./initialState.jsx";
 
 import * as types from "../actions/actionTypes.jsx";
 export default function transactionReducer(state = initialState.transactions, action){

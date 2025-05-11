@@ -1,5 +1,5 @@
 import * as types from "../actions/actionTypes.jsx";
-import initialState from "./initialState.js";
+import initialState from "./initialState.jsx";
 export default function categoryReducer(state = initialState.categories, action){
     switch(action.type){
 

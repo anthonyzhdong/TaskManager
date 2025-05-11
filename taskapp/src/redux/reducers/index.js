@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import transactions from "./transactionReducer.js";
-import categories from "./categoryReducer.js";
-import transactionTypes from "./transactionTypesReducer.js";
+import transactions from "./transactionReducer.jsx";
+import categories from "./categoryReducer.jsx";
+import transactionTypes from "./transactionTypesReducer.jsx";
 
 // combines multiple reducers into one
 const rootReducer = combineReducers({
