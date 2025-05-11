@@ -29,6 +29,9 @@ const TransactionList = ({ transactions }) => (
               <button>
                 <Link to = {"/transaction/" + transaction.slug}>EDIT</Link>
               </button> 
+              <button>
+                <td>DELETE</td>
+              </button> 
             </td>
           </tr>
         );
