@@ -48,4 +48,23 @@ export function saveTransaction(transaction){
     }
 }
 
+export function calculateAccountBalance(){
+    return function(dispatch, getState){
+        const state = getState();
+        const transactions = state.transactions;
+
+        const balance = transactions.reduce((total, transaction) =>{
+            if(transaction.type === 1){
+                return total + parseFloat(transaction.amount);
+            }else{
+                return total - parseFloat(transaction.amount);
+            }
+        }, 0);
+
+        dispatch({type: types.CALCULATE_ACCOUNT_BALANCE, balance});
+    };
+
+
+}
+
 
