@@ -21,6 +21,9 @@ export function createTransactionSuccess(transaction){
     return { type: types.CREATE_TRANSACTIONS_SUCCESS, transaction };
 }
 
+export function deleteTransactionSuccess(transactionId){
+    return { type: types.DELETE_TRANSACTION_SUCCESS, transactionId };
+}
 
 
 export function loadTransactions(){
@@ -48,6 +51,21 @@ export function saveTransaction(transaction){
             .catch(error => {
                 throw error;
             });
+    }
+}
+
+export function deleteTransaction(transactionId){
+    return function(dispatch, getState){
+        return transactionApi
+            .deleteTransaction(transactionId).then(() => {
+                dispatch(deleteTransactionSuccess(transactionId));
+                dispatch(calculateAccountBalance());
+            })
+            .catch(error => {
+                throw error;
+            })
+                
+            
     }
 }
 

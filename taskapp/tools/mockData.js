@@ -33,7 +33,7 @@ const transactions = [
   {
     id: 4,
     title: "Biweekly Salary Deposit",
-    amount: 2150.50,
+    amount: 2000.00,
     slug: "biweekly-salary-deposit",
     categoryId: 5, // Income
     transactionType: 1, // Income
@@ -73,10 +73,10 @@ const transactions = [
   {
     id: 8,
     title: "Freelance Project Payment",
-    amount: 350.00,
+    amount: 100.00,
     slug: "freelance-project-payment",
     categoryId: 5, // Income
-    transactionType: 1, // Income
+    transactionType: 2, // Income
     description: "Web design project for client",
     date: new Date("2025-05-10").toISOString()
   },

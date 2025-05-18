@@ -13,6 +13,8 @@ export default function transactionReducer(state = initialState.transactions, ac
             return state.map(transaction => transaction.id === action.transaction.id ? action.transaction : transaction);
         case types.LOAD_TRANSACTIONS_SUCCESS:
             return action.transactions;
+        case types.DELETE_TRANSACTION_SUCCESS:
+            return state.filter(transaction => transaction.id !== action.transactionId);
         default:
             return state;
 

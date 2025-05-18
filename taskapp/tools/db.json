@@ -1,1 +1,126 @@
-{"transactions":[{"id":1,"title":"Monthly Apartment Rent","amount":1200,"slug":"monthly-apartment-rent","categoryId":1,"transactionType":2,"description":"Monthly rent payment for apartment","date":"2025-05-01T00:00:00.000Z"},{"id":2,"title":"Grocery Shopping - Whole Foods","amount":87.32,"slug":"grocery-shopping-whole-foods","categoryId":2,"transactionType":2,"description":"Weekly grocery shopping","date":"2025-05-03T00:00:00.000Z"},{"id":3,"title":"Internet Bill - May","amount":65.99,"slug":"internet-bill-may","categoryId":4,"transactionType":2,"description":"Monthly internet service payment","date":"2025-05-05T00:00:00.000Z"},{"id":4,"title":"Biweekly Salary Deposit","amount":2150.5,"slug":"biweekly-salary-deposit","categoryId":5,"transactionType":1,"description":"Direct deposit from employer","date":"2025-05-07T00:00:00.000Z"},{"id":5,"title":"Dinner at Olive Garden","amount":42.75,"slug":"dinner-at-olive-garden","categoryId":2,"transactionType":2,"description":"Dinner with friends","date":"2025-05-08T00:00:00.000Z"},{"id":6,"title":"New Shoes - Nike","amount":89.99,"slug":"new-shoes-nike","categoryId":3,"transactionType":2,"description":"Running shoes","date":"2025-05-08T00:00:00.000Z"},{"id":7,"title":"Mobile Phone Bill","amount":75,"slug":"mobile-phone-bill","categoryId":4,"transactionType":2,"description":"Monthly phone service","date":"2025-05-09T00:00:00.000Z"},{"id":8,"title":"Freelance Project Payment","amount":350,"slug":"freelance-project-payment","categoryId":5,"transactionType":1,"description":"Web design project for client","date":"2025-05-10T00:00:00.000Z"},{"id":9,"title":"Electric Bill - May","amount":78.45,"slug":"electric-bill-may","categoryId":4,"transactionType":2,"description":"Monthly electricity bill","date":"2025-05-12T00:00:00.000Z"},{"id":10,"title":"Online Course Subscription","amount":19.99,"slug":"online-course-subscription","categoryId":6,"transactionType":2,"description":"Monthly subscription for coding courses","date":"2025-05-13T00:00:00.000Z"}],"categories":[{"id":1,"name":"Rent/Mortgage"},{"id":2,"name":"Food & Dining"},{"id":3,"name":"Shopping"},{"id":4,"name":"Utilities"},{"id":5,"name":"Income"},{"id":6,"name":"Education"},{"id":7,"name":"Entertainment"},{"id":8,"name":"Transportation"},{"id":9,"name":"Health & Fitness"},{"id":10,"name":"Travel"}],"transactionTypes":[{"id":1,"name":"Income"},{"id":2,"name":"Expense"}]}
+{
+  "transactions": [
+    {
+      "id": 4,
+      "title": "Biweekly Salary Deposit",
+      "amount": 2000,
+      "slug": "biweekly-salary-deposit",
+      "categoryId": 5,
+      "transactionType": 1,
+      "description": "Direct deposit from employer",
+      "date": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "title": "Dinner at Olive Garden",
+      "amount": 42.75,
+      "slug": "dinner-at-olive-garden",
+      "categoryId": 2,
+      "transactionType": 2,
+      "description": "Dinner with friends",
+      "date": "2025-05-08T00:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "title": "New Shoes - Nike",
+      "amount": 89.99,
+      "slug": "new-shoes-nike",
+      "categoryId": 3,
+      "transactionType": 2,
+      "description": "Running shoes",
+      "date": "2025-05-08T00:00:00.000Z"
+    },
+    {
+      "id": 7,
+      "title": "Mobile Phone Bill",
+      "amount": 75,
+      "slug": "mobile-phone-bill",
+      "categoryId": 4,
+      "transactionType": 2,
+      "description": "Monthly phone service",
+      "date": "2025-05-09T00:00:00.000Z"
+    },
+    {
+      "id": 8,
+      "title": "Freelance Project Payment",
+      "amount": 100,
+      "slug": "freelance-project-payment",
+      "categoryId": 5,
+      "transactionType": 2,
+      "description": "Web design project for client",
+      "date": "2025-05-10T00:00:00.000Z"
+    },
+    {
+      "id": 9,
+      "title": "Electric Bill - May",
+      "amount": 78.45,
+      "slug": "electric-bill-may",
+      "categoryId": 4,
+      "transactionType": 2,
+      "description": "Monthly electricity bill",
+      "date": "2025-05-12T00:00:00.000Z"
+    },
+    {
+      "id": 10,
+      "title": "Online Course Subscription",
+      "amount": 19.99,
+      "slug": "online-course-subscription",
+      "categoryId": 6,
+      "transactionType": 2,
+      "description": "Monthly subscription for coding courses",
+      "date": "2025-05-13T00:00:00.000Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Rent/Mortgage"
+    },
+    {
+      "id": 2,
+      "name": "Food & Dining"
+    },
+    {
+      "id": 3,
+      "name": "Shopping"
+    },
+    {
+      "id": 4,
+      "name": "Utilities"
+    },
+    {
+      "id": 5,
+      "name": "Income"
+    },
+    {
+      "id": 6,
+      "name": "Education"
+    },
+    {
+      "id": 7,
+      "name": "Entertainment"
+    },
+    {
+      "id": 8,
+      "name": "Transportation"
+    },
+    {
+      "id": 9,
+      "name": "Health & Fitness"
+    },
+    {
+      "id": 10,
+      "name": "Travel"
+    }
+  ],
+  "transactionTypes": [
+    {
+      "id": 1,
+      "name": "Income"
+    },
+    {
+      "id": 2,
+      "name": "Expense"
+    }
+  ]
+}

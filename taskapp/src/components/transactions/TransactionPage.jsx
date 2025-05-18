@@ -36,6 +36,15 @@ class TransactionPage extends React.Component{
             });
         }   
     }
+
+    handleDeleteTransaction = async (transactionId) => {
+        try {
+            await this.props.actions.deleteTransaction(transactionId);
+        } catch (error) {
+            // toastify could be added here
+            alert("Delete failed. " + error.message);
+        }
+    };
     
 
      render(){
@@ -48,7 +57,12 @@ class TransactionPage extends React.Component{
                     style={{ marginBottom:20 }}
                     onClick={()  => this.setState({ redirectToManageTransactionPage: true })}
                 >Add Transaction</button>
-                <TransactionList transactions = {this.props.transactions}/>
+
+                
+                <TransactionList 
+                    transactions={this.props.transactions}
+                    onDeleteClick={this.handleDeleteTransaction}
+                />
                 {/* { this.props.tasks.map(task => (
                     <div key = {task.title}>{ task.title } </div>
                 ))}  */}
@@ -90,7 +104,8 @@ function mapDispatchToProps(dispatch){
         actions: {
             loadTransactions: bindActionCreators(transactionActions.loadTransactions, dispatch),
             loadCategories: bindActionCreators(categoryActions.loadCategories, dispatch),
-            loadTransactionTypes: bindActionCreators(transactionTypeActions.loadTransactionTypes, dispatch)
+            loadTransactionTypes: bindActionCreators(transactionTypeActions.loadTransactionTypes, dispatch),
+            deleteTransaction: bindActionCreators(transactionActions.deleteTransaction, dispatch)
         }
     };
 }
