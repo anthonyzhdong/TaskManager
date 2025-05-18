@@ -1,5 +1,6 @@
 export default {
     transactions: [],
     categories: [],
-    transactionTypes: []
+    transactionTypes: [],
+    accountBalance: 0
 };
