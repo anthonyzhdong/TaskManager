@@ -7,6 +7,7 @@ import propTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import TransactionList from './TransactionList.jsx';
 import { Navigate } from "react-router-dom";
+import AccountBalance from '../AccountBalance.jsx';
 
 class TransactionPage extends React.Component{
 
@@ -42,6 +43,7 @@ class TransactionPage extends React.Component{
             <>
                 {this.state.redirectToManageTransactionPage && <Navigate to= "/transaction" />}
                 <h1> Transactions </h1>
+                <AccountBalance/>
                 <button
                     style={{ marginBottom:20 }}
                     onClick={()  => this.setState({ redirectToManageTransactionPage: true })}

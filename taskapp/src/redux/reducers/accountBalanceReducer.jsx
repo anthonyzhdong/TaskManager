@@ -1,4 +1,4 @@
-import initialState from "./initialState";
+import initialState from "./initialState.jsx";
 import * as types from "../actions/actionTypes.jsx";
 
 export default function accountBalanceReducer(state = initialState.accountBalance,action){

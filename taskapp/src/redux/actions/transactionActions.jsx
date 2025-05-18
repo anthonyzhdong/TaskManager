@@ -27,6 +27,7 @@ export function loadTransactions(){
     return function (dispatch){
         return transactionApi.getTransactions().then(transactions => {
             dispatch(loadTransactionSuccess(transactions));
+            dispatch(calculateAccountBalance());
         }).catch(error => {
             throw error;
         })
@@ -41,6 +42,8 @@ export function saveTransaction(transaction){
                 transaction.id
                 ? dispatch(updateTransactionSuccess(savedTransaction))
                 : dispatch(createTransactionSuccess(savedTransaction));
+
+                dispatch(calculateAccountBalance());
             })
             .catch(error => {
                 throw error;
@@ -54,10 +57,10 @@ export function calculateAccountBalance(){
         const transactions = state.transactions;
 
         const balance = transactions.reduce((total, transaction) =>{
-            if(transaction.type === 1){
-                return total + parseFloat(transaction.amount);
+            if(transaction.transactionType === 1){
+                return total += parseFloat(transaction.amount);
             }else{
-                return total - parseFloat(transaction.amount);
+                return total -= parseFloat(transaction.amount);
             }
         }, 0);
 
